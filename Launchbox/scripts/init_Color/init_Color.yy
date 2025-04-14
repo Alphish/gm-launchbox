@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"init_Color",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"init_Color",
+  "parent":{
+    "name":"Init",
+    "path":"folders/Demo/Init.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

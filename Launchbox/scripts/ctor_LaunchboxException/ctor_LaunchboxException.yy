@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ctor_LaunchboxException",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ctor_LaunchboxException",
+  "parent":{
+    "name":"Launchbox",
+    "path":"folders/_Packages/Alphish/Launchbox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
