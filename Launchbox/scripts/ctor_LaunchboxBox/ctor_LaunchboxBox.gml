@@ -46,8 +46,9 @@ function LaunchboxBox(_name = undefined) constructor {
                 var _create_layer = array_length(_all_layers) > 0 ? _all_layers[0] : layer_create(0, "Instances");
             }
             
-            var _instance = !is_undefined(create_variables)
-                ? instance_create_layer(0, 0, _create_layer, create_object, create_variables)
+            var _create_variables = is_callable(create_variables) ? create_variables() : create_variables;
+            var _instance = !is_undefined(_create_variables)
+                ? instance_create_layer(0, 0, _create_layer, create_object, _create_variables)
                 : instance_create_layer(0, 0, _create_layer, create_object);
         
             if (!is_undefined(postcreate))
