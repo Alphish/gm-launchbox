@@ -8,8 +8,8 @@
   "name":"obj_TestText",
   "overriddenProperties":[],
   "parent":{
-    "name":"Demo",
-    "path":"folders/Demo.yy",
+    "name":"Init",
+    "path":"folders/Demo/Init.yy",
   },
   "parentObjectId":null,
   "persistent":false,
