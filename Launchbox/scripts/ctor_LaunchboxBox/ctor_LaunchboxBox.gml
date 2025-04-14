@@ -1,5 +1,5 @@
-/// @desc A Launchbox box storing callbacks to execute upon launch.
-/// @arg {String,Undefined} [name]      The name to declare the Launchbox box with; leave as undefined to omit declaration.
+/// @desc A launch box storing callbacks to execute upon launch.
+/// @arg {String,Undefined} [name]      The name to declare the launch box with; leave as undefined to omit declaration.
 function LaunchboxBox(_name = undefined) constructor {
     /// @ignore
     static declared_boxes = {};
@@ -7,7 +7,7 @@ function LaunchboxBox(_name = undefined) constructor {
     if (!is_string(_name) && !is_undefined(_name))
         throw LaunchboxException.invalid_identifier(_name);
     
-    /// @desc The name the Launchbox box has been declared with.
+    /// @desc The name the box has been declared with.
     /// @type {String,Undefined}
     name = _name;
     
@@ -33,9 +33,9 @@ function LaunchboxBox(_name = undefined) constructor {
     }
     
     /// @desc Puts the given instance into the box, to be created on launch with given pre-Create variables and post-Create logic.
-    /// @arg {Asset.GMObject} object    The object to create the instance of.
-    /// @arg {Struct} [variables]       The variables set on the newly created instance.
-    /// @arg {Function} [postcreate]    The logic to execute on the newly created instance, after its Create event.
+    /// @arg {Asset.GMObject} object            The object to create the instance of.
+    /// @arg {Struct,Function} [variables]      The variables set on the newly created instance, or a parameterless function generating them.
+    /// @arg {Function} [postcreate]            The logic to execute on the newly created instance, after its Create event.
     static put_instance = function(_object, _variables = undefined, _postcreate = undefined) {
         static create_instance = function() {
             var _create_layer;
