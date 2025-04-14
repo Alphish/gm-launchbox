@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"func_Launchbox",
+  "%Name":"ctor_LaunchboxException",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"func_Launchbox",
+  "name":"ctor_LaunchboxException",
   "parent":{
     "name":"Launchbox",
     "path":"folders/_Packages/Alphish/Launchbox.yy",

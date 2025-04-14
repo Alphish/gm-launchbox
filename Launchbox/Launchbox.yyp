@@ -23,7 +23,9 @@
   "name":"Launchbox",
   "resources":[
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"id":{"name":"func_Launchbox","path":"scripts/func_Launchbox/func_Launchbox.yy",},},
+    {"id":{"name":"ctor_LaunchboxBox","path":"scripts/ctor_LaunchboxBox/ctor_LaunchboxBox.yy",},},
+    {"id":{"name":"ctor_LaunchboxException","path":"scripts/ctor_LaunchboxException/ctor_LaunchboxException.yy",},},
+    {"id":{"name":"funcs_Launchbox","path":"scripts/funcs_Launchbox/funcs_Launchbox.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
