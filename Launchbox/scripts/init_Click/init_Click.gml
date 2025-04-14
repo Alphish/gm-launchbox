@@ -1,6 +1,5 @@
-launchbox_put_instance(obj_TestText, {
+launchbox_put_instance(obj_TestText, function() { return {
     x: 16,
-    text: "Click anywhere with left mouse button to continue...\nAlso, the y coordinate has been set with post-Create logic, because room_height isn't known at the time of putting the instance into the Launchbox box" 
-}, function() {
-    y = room_height - 80;
-});
+    y: room_height - 80,
+    text: "Click anywhere with left mouse button to continue...\nThis text uses y variable calculated on launch, to use room_height which isn't yet available during initialisation script call."
+}});
