@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"feather_Launchbox",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"feather_Launchbox",
+  "parent":{
+    "name":"Launchbox",
+    "path":"folders/_Packages/Alphish/Launchbox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

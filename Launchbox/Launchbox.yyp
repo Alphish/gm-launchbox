@@ -35,6 +35,7 @@
     {"id":{"name":"rm_Show","path":"rooms/rm_Show/rm_Show.yy",},},
     {"id":{"name":"ctor_LaunchboxBox","path":"scripts/ctor_LaunchboxBox/ctor_LaunchboxBox.yy",},},
     {"id":{"name":"ctor_LaunchboxException","path":"scripts/ctor_LaunchboxException/ctor_LaunchboxException.yy",},},
+    {"id":{"name":"feather_Launchbox","path":"scripts/feather_Launchbox/feather_Launchbox.yy",},},
     {"id":{"name":"funcs_Launchbox","path":"scripts/funcs_Launchbox/funcs_Launchbox.yy",},},
     {"id":{"name":"init_Click","path":"scripts/init_Click/init_Click.yy",},},
     {"id":{"name":"init_Color","path":"scripts/init_Color/init_Color.yy",},},
