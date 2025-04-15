@@ -43,7 +43,7 @@ function LaunchboxBox(_name = undefined) constructor {
                 _create_layer = layer_get_id("Instances");
             } else {
                 var _all_layers = layer_get_all();
-                var _create_layer = array_length(_all_layers) > 0 ? _all_layers[0] : layer_create(0, "Instances");
+                _create_layer = array_length(_all_layers) > 0 ? _all_layers[0] : layer_create(0, "Instances");
             }
             
             var _create_variables = is_callable(create_variables) ? create_variables() : create_variables;

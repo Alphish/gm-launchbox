@@ -16,22 +16,6 @@ function launchbox(_box = "main") {
     return box_static.declared_boxes[$ _key] ?? new LaunchboxBox(_box);
 }
 
-/// @desc Checks if a launch box with the given identifier has been declared. Returns true for launch box instances.
-/// @arg {String,Struct.LaunchboxBox} [box]     The box to pass or check; "main" by default.
-/// @returns {Bool}
-function launchbox_exists(_box = "main") {
-    static box_static = static_get(LaunchboxBox);
-    
-    if (is_instanceof(_box, LaunchboxBox))
-        return true;
-    
-    if (!struct_exists(box_static, "declared_boxes"))
-        return false;
-    
-    var _key = string_lower(_box);
-    return struct_exists(box_static.declared_boxes, _key);
-}
-
 /// @desc Declares a launch box with the given identifier if one already doesn't exist ("main" by default).
 /// @arg {String} [name]        The name of the box to declare; "main" by default.
 /// @returns {Struct.LaunchboxBox}
@@ -50,6 +34,22 @@ function launchbox_require(_box = "main") {
         throw LaunchboxException.undeclared_box(_box);
     
     return launchbox(_box);
+}
+
+/// @desc Checks if a launch box with the given identifier has been declared. Returns true for launch box instances.
+/// @arg {String,Struct.LaunchboxBox} [box]     The box to pass or check; "main" by default.
+/// @returns {Bool}
+function launchbox_exists(_box = "main") {
+    static box_static = static_get(LaunchboxBox);
+    
+    if (is_instanceof(_box, LaunchboxBox))
+        return true;
+    
+    if (!struct_exists(box_static, "declared_boxes"))
+        return false;
+    
+    var _key = string_lower(_box);
+    return struct_exists(box_static.declared_boxes, _key);
 }
 
 #endregion
