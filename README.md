@@ -1,2 +1,3 @@
-# gm-launchbox
-A GameMaker library for defining and performing initialisation logic.
+<p align="center">
+    <img src="Logo.png" alt="Launchbox Logo">
+</p>
