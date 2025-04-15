@@ -1,8 +1,8 @@
-for (var i = 0, _count = array_length(boxes); i < _count; i++) {
+array_foreach(boxes, function(_box) {
     if (allow_missing)
-        launchbox_try_launch(boxes[i]);
+        launchbox_try_launch(_box);
     else
-        launchbox_launch(boxes[i]);
-}
+        launchbox_launch(_box);
+});
 
 instance_destroy();
