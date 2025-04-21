@@ -1,9 +1,36 @@
 /// @desc A launch box storing callbacks to execute upon launch.
 /// @arg {String,Undefined} [name]      The name to declare the launch box with; leave as undefined to omit declaration.
 function LaunchboxBox(_name = undefined) constructor {
+    // --------------
+    // Shared members
+    // --------------
+    
     /// @ignore
     static declared_boxes = {};
     
+    /// @ignore
+    static any_exists = function() {
+        var _boxes = LaunchboxBox.declared_boxes;
+        return struct_names_count(_boxes) > 0;
+    }
+    
+    /// @ignore
+    static get_all = function() {
+        var _boxes = LaunchboxBox.declared_boxes;
+        var _keys = struct_get_names(_boxes);
+        var _count = array_length(_keys);
+        var _result = array_create(_count);
+        for (var i = 0; i < _count; i++) {
+            _result[i] = _boxes[$ _keys[i]];
+        }
+        return _result;
+    }
+    
+    // --------
+    // Instance
+    // --------
+    
+    // accepting only string identifiers
     if (!is_string(_name) && !is_undefined(_name))
         throw LaunchboxException.invalid_identifier(_name);
     
