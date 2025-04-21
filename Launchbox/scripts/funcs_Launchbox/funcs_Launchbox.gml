@@ -52,6 +52,28 @@ function launchbox_exists(_box = "main") {
     return struct_exists(box_static.declared_boxes, _key);
 }
 
+/// @desc Checks if at least one launch box is declared.
+/// @returns {Bool}
+function launchbox_any_exists() {
+    static box_static = static_get(LaunchboxBox);
+    
+    if (!struct_exists(box_static, "any_exists"))
+        return [];
+    
+    return box_static.any_exists();
+}
+
+/// @desc Retrieves all declared launch boxes.
+/// @returns {Array<Struct.LaunchboxBox>}
+function launchbox_get_all() {
+    static box_static = static_get(LaunchboxBox);
+    
+    if (!struct_exists(box_static, "get_all"))
+        return [];
+    
+    return box_static.get_all();
+}
+
 #endregion
 
 #region Managing boxes
@@ -112,6 +134,12 @@ function launchbox_discard() {
     }
 }
 
+/// @desc Discards all declared launch boxes.
+function launchbox_discard_all() {
+    var _boxes = launchbox_get_all();
+    array_foreach(_boxes, function(_box) { _box.discard(); });
+}
+
 #endregion
 
 #region Launching boxes
@@ -129,7 +157,7 @@ function launchbox_launch() {
     }
 }
 
-/// @desc Attempts to launch one or more launch boxes, executing all their callbacks and discarding them. Missing declarations are ignored. If no boxes are given, the "main" box launch is attempted.
+/// @desc Attempts to launch one or more launch boxes, executing all their callbacks and discarding them. Missing declarations will be ignored. If no boxes are given, the "main" box launch is attempted.
 /// @arg {String,Struct.LaunchboxBox} [...boxes]        One or more boxes to attempt the launch of.
 function launchbox_try_launch() {
     if (argument_count == 0) {
@@ -139,6 +167,38 @@ function launchbox_try_launch() {
     
     for (var i = 0; i < argument_count; i++) {
         launchbox(argument[i]).launch();
+    }
+}
+
+/// @desc Launches all of given launch boxes. Missing declarations will throw errors. If any box remains declared afterwards, an error will be thrown.
+/// @arg {String,Struct.LaunchboxBox} [...boxes]        One or more boxes to launch.
+function launchbox_launch_all() {
+    if (argument_count == 0)
+        throw LaunchboxException.no_boxes_given(nameof(launchbox_launch_all()));
+    
+    for (var i = 0; i < argument_count; i++) {
+        launchbox_require(argument[i]).launch();
+    }
+    
+    if (launchbox_any_exists()) {
+        var _name = array_first(launchbox_get_all()).name;
+        throw LaunchboxException.leftover_box(_name);
+    }
+}
+
+/// @desc Attemps to launch all of given launch boxes. Missing declarations will be ignored. If any box remains declared afterwards, an error will be thrown.
+/// @arg {String,Struct.LaunchboxBox} [...boxes]        One or more boxes to launch.
+function launchbox_try_launch_all() {
+    if (argument_count == 0)
+        throw LaunchboxException.no_boxes_given(nameof(launchbox_try_launch_all()));
+    
+    for (var i = 0; i < argument_count; i++) {
+        launchbox(argument[i]).launch();
+    }
+    
+    if (launchbox_any_exists()) {
+        var _name = array_first(launchbox_get_all()).name;
+        throw LaunchboxException.leftover_box(_name);
     }
 }
 

@@ -45,3 +45,21 @@ LaunchboxException.undeclared_box = function(_name) {
         $"Attempting to retrieve a launch box with '{_name}' identifier, but no such box exists."
         );
 }
+
+/// @desc Creates a Launchbox no-boxes-given exception, caused by calling a function requiring at least one box argument but receiving none.
+/// @arg {String} func      The function requiring at least one box argument.
+LaunchboxException.no_boxes_given = function(_func) {
+    return new LaunchboxException(
+        $"launchbox_no_boxes_given",
+        $"The function '{_func}' requires at least one box argument, but no arguments were given."
+        );
+}
+
+/// @desc Creates a Launchbox leftover box exception, caused by launch box declarations remaining when none are expected.
+/// @arg {String} name      The identifier of a leftover box.
+LaunchboxException.leftover_box = function(_name) {
+    return new LaunchboxException(
+        $"launchbox_leftover_box",
+        $"All launch boxes were supposed to be launched, but a leftover box with '{_name}' identifier remains."
+        );
+}
