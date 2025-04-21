@@ -19,5 +19,5 @@ schedule_firework = function() {
 }
 
 launch = function() {
-    launchbox_try_launch("rings", "color", "fireworks");
+    launchbox_try_launch_all("rings", "color", "fireworks");
 }
