@@ -53,10 +53,21 @@ function LaunchboxBox(_name = undefined) constructor {
     /// @type {Array<Function>}
     callbacks = [];
     
-    /// @desc Puts the given callback into the box, to be executed on launch.
+    /// @desc Puts the given callback into the box, to be executed on launch. Optionally accepts an array of arguments.
     /// @arg {Function} callback        The callback to execute on launch.
-    static put = function(_callback) {
-        array_push(callbacks, _callback);
+    /// @arg {Array} [args]             The arguments to execute the callback with.
+    static put = function(_callback, _args = undefined) {
+        if (is_undefined(_args)) {
+            array_push(callbacks, _callback);
+            return;
+        }
+        
+        if (!is_method(_callback))
+            _callback = method(undefined, _callback);
+        
+        array_push(callbacks, method({ callback: _callback, args: _args }, function() {
+            method_call(callback, args);
+        }));
     }
     
     /// @desc Puts the given instance into the box, to be created on launch with given pre-Create variables and post-Create logic.

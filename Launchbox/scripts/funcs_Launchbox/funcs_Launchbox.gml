@@ -78,17 +78,19 @@ function launchbox_get_all() {
 
 #region Managing boxes
 
-/// @desc Puts a callback into the main launch box, to be executed on launch.
+/// @desc Puts a callback into the main launch box, to be executed on launch. Optionally accepts an array of arguments.
 /// @arg {Function} callback        The callback to execute on launch.
-function launchbox_put(_callback) {
-    launchbox().put(_callback);
+/// @arg {Array} [args]             The arguments to execute the callback with.
+function launchbox_put(_callback, _args = undefined) {
+    launchbox().put(_callback, _args);
 }
 
-/// @desc Puts a callback into the given launch box, to be executed on launch.
+/// @desc Puts a callback into the given launch box, to be executed on launch. Optionally accepts an array of arguments.
 /// @arg {String,Struct.LaunchboxBox} box       The box to put the callback into.
 /// @arg {Function} callback                    The callback to execute on launch.
-function launchbox_put_into(_box, _callback) {
-    launchbox(_box).put(_callback);
+/// @arg {Array} [args]                         The arguments to execute the callback with.
+function launchbox_put_into(_box, _callback, _args = undefined) {
+    launchbox(_box).put(_callback, _args);
 }
 
 /// @desc Puts an instance into the main launch box, to be created on launch with given pre-Create variables and post-Create logic.
