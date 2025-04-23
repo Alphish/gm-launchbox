@@ -93,6 +93,23 @@ function launchbox_put_into(_box, _callback, _args = undefined) {
     launchbox(_box).put(_callback, _args);
 }
 
+/// @desc Puts a context-bound method into the main launch box, to be executed on launch. Optionally accepts an array of arguments.
+/// @arg {Any} context              The context of the method to execute.
+/// @arg {Function,String} func     The logic or name of the method to execute.
+/// @arg {Array} [args]             The arguments to execute the method with.
+function launchbox_put_method(_context, _func, _args = undefined) {
+    launchbox().put_method(_context, _func, _args);
+}
+
+/// @desc Puts a context-bound method into the given launch box, to be executed on launch. Optionally accepts an array of arguments.
+/// @arg {String,Struct.LaunchboxBox} box       The box to put the callback into.
+/// @arg {Any} context                          The context of the method to execute.
+/// @arg {Function,String} func                 The logic or name of the method to execute.
+/// @arg {Array} [args]                         The arguments to execute the method with.
+function launchbox_put_method_into(_box, _context, _func, _args = undefined) {
+    launchbox(_box).put_method(_context, _func, _args);
+}
+
 /// @desc Puts an instance into the main launch box, to be created on launch with given pre-Create variables and post-Create logic.
 /// @arg {Asset.GMObject} object                The object to create the instance of.
 /// @arg {Struct,Function} [variables]          The variables set on the newly created instance, or a parameterless function generating them.

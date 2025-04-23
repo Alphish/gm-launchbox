@@ -70,6 +70,28 @@ function LaunchboxBox(_name = undefined) constructor {
         }));
     }
     
+    /// @desc Puts a context-bound method into the main launch box, to be executed on launch. Optionally accepts an array of arguments.
+    /// @arg {Any} context              The context of the method to execute.
+    /// @arg {Function,String} func     The logic or name of the method to execute.
+    /// @arg {Array} [args]             The arguments to execute the method with.
+    static put_method = function(_context, _func, _args = undefined) {
+        // statics
+        static execute_method = function() {
+            var _function = func;
+            var _arguments = args;
+            with (context) {
+                var _resolved_function = is_string(_function) ? self[$ _function] : _function;
+                script_execute_ext(_resolved_function, _arguments);
+            }
+        }
+        
+        // body
+        if (is_method(_func))
+            _func = method_get_index(_func);
+        
+        array_push(callbacks, method({ context: _context, func: _func, args: _args ?? [] }, execute_method));
+    }
+    
     /// @desc Puts the given instance into the box, to be created on launch with given pre-Create variables and post-Create logic.
     /// @arg {Asset.GMObject} object            The object to create the instance of.
     /// @arg {Struct,Function} [variables]      The variables set on the newly created instance, or a parameterless function generating them.
