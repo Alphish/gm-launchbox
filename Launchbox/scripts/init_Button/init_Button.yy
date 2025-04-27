@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"init_Color",
+  "%Name":"init_Button",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"init_Color",
+  "name":"init_Button",
   "parent":{
     "name":"Init",
     "path":"folders/Demo/Init.yy",

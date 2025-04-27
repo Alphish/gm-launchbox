@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_Text",
+  "%Name":"fnt_Title",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":14,
@@ -189,10 +189,10 @@
   "last":0,
   "lineHeight":18,
   "maintainGms1Font":false,
-  "name":"fnt_Text",
+  "name":"fnt_Title",
   "parent":{
-    "name":"Demo",
-    "path":"folders/Demo.yy",
+    "name":"Init",
+    "path":"folders/Demo/Init.yy",
   },
   "pointRounding":0,
   "ranges":[

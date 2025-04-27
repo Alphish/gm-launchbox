@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"init_Hello",
+  "%Name":"init_Background",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"init_Hello",
+  "name":"init_Background",
   "parent":{
     "name":"Init",
     "path":"folders/Demo/Init.yy",
