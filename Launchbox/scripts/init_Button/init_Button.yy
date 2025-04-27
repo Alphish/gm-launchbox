@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"init_Button",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"init_Button",
+  "parent":{
+    "name":"Init",
+    "path":"folders/Demo/Init.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

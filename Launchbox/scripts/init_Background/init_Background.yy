@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"init_Background",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"init_Background",
+  "parent":{
+    "name":"Init",
+    "path":"folders/Demo/Init.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
