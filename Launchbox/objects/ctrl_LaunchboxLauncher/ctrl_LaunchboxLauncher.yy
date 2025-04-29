@@ -28,6 +28,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"boxes","filters":[],"listItems":[],"multiselect":false,"name":"boxes","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[\"main\"]","varType":4,},
     {"$GMObjectProperty":"v1","%Name":"allow_missing","filters":[],"listItems":[],"multiselect":false,"name":"allow_missing","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"allow_leftovers","filters":[],"listItems":[],"multiselect":false,"name":"allow_leftovers","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
