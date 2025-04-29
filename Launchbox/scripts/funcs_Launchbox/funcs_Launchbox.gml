@@ -16,7 +16,7 @@ function launchbox(_box = "main") {
     return box_static.declared_boxes[$ _key] ?? new LaunchboxBox(_box);
 }
 
-/// @desc Declares a launch box with the given identifier if one already doesn't exist ("main" by default).
+/// @desc Declares a launch box with the given identifier if one already doesn't exist.
 /// @arg {String} [name]        The name of the box to declare; "main" by default.
 /// @returns {Struct.LaunchboxBox}
 function launchbox_declare(_name = "main") {
@@ -37,7 +37,7 @@ function launchbox_require(_box = "main") {
 }
 
 /// @desc Checks if a launch box with the given identifier has been declared. Returns true for launch box instances.
-/// @arg {String,Struct.LaunchboxBox} [box]     The box to pass or check; "main" by default.
+/// @arg {String,Struct.LaunchboxBox} [box]     The box to check; "main" by default.
 /// @returns {Bool}
 function launchbox_exists(_box = "main") {
     static box_static = static_get(LaunchboxBox);
@@ -110,7 +110,7 @@ function launchbox_put_method_into(_box, _context, _func, _args = undefined) {
     launchbox(_box).put_method(_context, _func, _args);
 }
 
-/// @desc Puts an instance into the main launch box, to be created on launch with given pre-Create variables and post-Create logic.
+/// @desc Puts an instance into the main launch box, to be created on launch with given pre-Create variables and a post-Create logic.
 /// @arg {Asset.GMObject} object                The object to create the instance of.
 /// @arg {Struct,Function} [variables]          The variables set on the newly created instance, or a parameterless function generating them.
 /// @arg {Function} [postcreate]                The logic to execute on the newly created instance, after its Create event.
@@ -118,7 +118,7 @@ function launchbox_put_instance(_object, _variables = undefined, _postcreate = u
     launchbox().put_instance(_object, _variables, _postcreate);
 }
 
-/// @desc Puts an instance into the given launch box, to be created on launch with given pre-Create variables and post-Create logic.
+/// @desc Puts an instance into the given launch box, to be created on launch with given pre-Create variables and a post-Create logic.
 /// @arg {String,Struct.LaunchboxBox} box       The box to put the callback into.
 /// @arg {Asset.GMObject} object                The object to create the instance of.
 /// @arg {Struct,Function} [variables]          The variables set on the newly created instance, or a parameterless function generating them.
@@ -193,7 +193,7 @@ function launchbox_try_launch() {
 /// @arg {String,Struct.LaunchboxBox} [...boxes]        One or more boxes to launch.
 function launchbox_launch_all() {
     if (argument_count == 0)
-        throw LaunchboxException.no_boxes_given(nameof(launchbox_launch_all()));
+        throw LaunchboxException.no_boxes_given(nameof(launchbox_launch_all));
     
     for (var i = 0; i < argument_count; i++) {
         launchbox_require(argument[i]).launch();
@@ -206,10 +206,10 @@ function launchbox_launch_all() {
 }
 
 /// @desc Attemps to launch all of given launch boxes. Missing declarations will be ignored. If any box remains declared afterwards, an error will be thrown.
-/// @arg {String,Struct.LaunchboxBox} [...boxes]        One or more boxes to launch.
+/// @arg {String,Struct.LaunchboxBox} [...boxes]        One or more boxes to attempt the launch of.
 function launchbox_try_launch_all() {
     if (argument_count == 0)
-        throw LaunchboxException.no_boxes_given(nameof(launchbox_try_launch_all()));
+        throw LaunchboxException.no_boxes_given(nameof(launchbox_try_launch_all));
     
     for (var i = 0; i < argument_count; i++) {
         launchbox(argument[i]).launch();

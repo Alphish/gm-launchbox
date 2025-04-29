@@ -92,7 +92,7 @@ function LaunchboxBox(_name = undefined) constructor {
         array_push(callbacks, method({ context: _context, func: _func, args: _args ?? [] }, execute_method));
     }
     
-    /// @desc Puts the given instance into the box, to be created on launch with given pre-Create variables and post-Create logic.
+    /// @desc Puts the given instance into the box, to be created on launch with given pre-Create variables and a post-Create logic.
     /// @arg {Asset.GMObject} object            The object to create the instance of.
     /// @arg {Struct,Function} [variables]      The variables set on the newly created instance, or a parameterless function generating them.
     /// @arg {Function} [postcreate]            The logic to execute on the newly created instance, after its Create event.
