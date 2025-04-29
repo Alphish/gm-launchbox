@@ -5,10 +5,10 @@ request_puff = function() {
 }
 
 request_color = function(_color) {
-    launchbox_put_method_into("color", { color: _color }, function() {
+    launchbox_put_into("color", function(_color) {
         var _instance = instance_find(obj_EffectOrb, irandom(instance_number(obj_EffectOrb) - 1));
-        _instance.image_blend = color;
-    });
+        _instance.image_blend = _color;
+    }, [_color]);
 }
 
 request_firework = function() {
