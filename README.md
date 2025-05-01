@@ -30,7 +30,7 @@ launchbox_put(function() {
 });
 ```
 
-Then, place the `ctrl_LaunchboxLauncher` instance in the starting room. Alternatively, call the following in s starting room instance or the room Creation Code:
+Then, place the `ctrl_LaunchboxLauncher` instance in the starting room. Alternatively, call the following in a starting room instance or the room Creation Code:
 
 ```gml
 launchbox_launch();
