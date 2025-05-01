@@ -55,11 +55,12 @@ launchbox_put_into("items", function() {
 Then, the enemies definitions are put in the "enemies" box, using the items to define loot:
 
 ```gml
-launchbox_put_into("eneimes", function() {
+launchbox_put_into("eneimes" /* sic! */, function() {
     global.enemies = {
         slime: new Enemy("Slime", /* HP */ 20, /* ATK */ 2, /* no loot drops */ undefined, /* drop rate */ 0),
         goblin: new Enemy("Goblin", /* HP */ 30, /* ATK */ 5, global.items.potion, /* drop rate */ 0.3),
         hobgoblin: new Enemy("Hobgoblin", /* HP */ 50, /* ATK */ 12, global.items.sword, /* drop rate */ 0.1),
+        // and so on
     };
 });
 ```
