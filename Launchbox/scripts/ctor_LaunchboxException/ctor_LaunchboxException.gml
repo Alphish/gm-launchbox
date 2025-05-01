@@ -1,17 +1,17 @@
 /// @desc An exception to be thrown due to invalid Launchbox usage.
 /// @arg {String} code              The code of the exception to differentiate between different exception causes.
-/// @arg {String} description       The detailed description explaining the exception.
+/// @arg {String} description       A detailed description explaining the exception.
 function LaunchboxException(_code, _description) constructor {
     /// @desc The code of the exception to differentiate between different exception causes.
     /// @type {String}
     code = _code;
     
-    /// @desc The detailed description explaining the exception.
+    /// @desc A detailed description explaining the exception.
     /// @type {String}
     description = _description;
     
     toString = function() {
-        return description;
+        return $"Launchbox.{code}: {description}";
     }
 }
 
@@ -23,7 +23,7 @@ function LaunchboxException(_code, _description) constructor {
 /// @arg {String} name      The identifier used for the attempted launch box declaration.
 LaunchboxException.invalid_identifier = function(_name) {
     return new LaunchboxException(
-        $"launchbox_invalid_identifier",
+        $"invalid_identifier",
         $"The given identifier to declare the launch box with is {typeof(_name)} '{_name}', when it should be a string instead."
         );
 }
@@ -32,7 +32,7 @@ LaunchboxException.invalid_identifier = function(_name) {
 /// @arg {String} name      The identifier used for the attempted launch box declaration.
 LaunchboxException.duplicate_identifier = function(_name) {
     return new LaunchboxException(
-        $"launchbox_duplicate_identifier",
+        $"duplicate_identifier",
         $"Attempting to declare a launch box with '{_name}' identifier, but there's already a box with such identifier."
         );
 }
@@ -41,7 +41,7 @@ LaunchboxException.duplicate_identifier = function(_name) {
 /// @arg {String} name      The identifier used for the attempted launch box retrieval.
 LaunchboxException.undeclared_box = function(_name) {
     return new LaunchboxException(
-        $"launchbox_undeclared_box",
+        $"undeclared_box",
         $"Attempting to retrieve a launch box with '{_name}' identifier, but no such box exists."
         );
 }
@@ -50,7 +50,7 @@ LaunchboxException.undeclared_box = function(_name) {
 /// @arg {String} func      The function requiring at least one box argument.
 LaunchboxException.no_boxes_given = function(_func) {
     return new LaunchboxException(
-        $"launchbox_no_boxes_given",
+        $"no_boxes_given",
         $"The function '{_func}' requires at least one box argument, but no arguments were given."
         );
 }
@@ -59,7 +59,7 @@ LaunchboxException.no_boxes_given = function(_func) {
 /// @arg {String} name      The identifier of a leftover box.
 LaunchboxException.leftover_box = function(_name) {
     return new LaunchboxException(
-        $"launchbox_leftover_box",
+        $"leftover_box",
         $"All launch boxes were supposed to be launched, but a leftover box with '{_name}' identifier remains."
         );
 }
