@@ -76,3 +76,5 @@ launch = function() {
 First it runs all prepared smoke puffs actions, then all prepared colour-switching actions, and finally all prepared fireworks actions.
 
 The effects created match the colours of their respective orbs at the time. With this launch order, it means if an orb switches a colour upon launch, then any smoke puff it creates will match the previous colour and any firework it creates will match the new colour. Changing the launch order will change the expected effect colours accordingly.
+
+**Next:** [Example room setup](/Docs/Tutorials/05-ExampleRoomSetup.md)
