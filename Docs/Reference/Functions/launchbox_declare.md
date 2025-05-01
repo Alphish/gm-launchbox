@@ -17,7 +17,7 @@ The function will throw an error when passed something else than a string identi
 
 ### Example
 
-The following code declares a launch box with "optional" name before launch, in case it hasn't been declared before (through adding a callback):
+The following code declares a launch box with "optional" name before launch. This prevents the missing declaration error if no callbacks have been added to the "optional" box before:
 
 ```gml
 // sometimes no callback is added to the optional launch box
@@ -26,5 +26,3 @@ launchbox_declare("optional");
 
 launchbox_launch_all("mandatory", "optional");
 ```
-
-This code launches a launch box declared as "items" instead:
