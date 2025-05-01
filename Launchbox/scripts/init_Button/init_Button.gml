@@ -5,7 +5,7 @@ launchbox_put_instance(obj_Button, function() {
         image_xscale: 4,
         text: "Visit example",
         on_click: function() {
-            url_open("https://github.com/Alphish/gm-launchbox/blob/feature/ISS-7_megaDocs/Docs/Tutorials/03-DemoInitialRoom.md");
+            url_open("https://github.com/Alphish/gm-launchbox/blob/main/Docs/Tutorials/03-DemoInitialRoom.md");
         },
     };
 });

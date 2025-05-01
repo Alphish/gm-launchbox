@@ -20,5 +20,5 @@ launch = function() {
 }
 
 visit_example = function() {
-    url_open("https://github.com/Alphish/gm-launchbox/blob/feature/ISS-7_megaDocs/Docs/Tutorials/04-DemoEffectsShow.md");
+    url_open("https://github.com/Alphish/gm-launchbox/blob/main/Docs/Tutorials/04-DemoEffectsShow.md");
 };
