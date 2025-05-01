@@ -6,9 +6,7 @@
 
 **Launchbox** is a library for scheduling and running initialisation tasks.
 
-It can be used directly inside GameMaker scripts to initialise game data or create important instances; a rough ordering of initialisation task groups is also supported.
-
-Additionally, it may be used at the start of levels to gather initialisation tasks from room instances and perform them once everything is in place.
+In particular, it can be used for preparing the setup at the start of the game, as well as putting things together when visiting individual rooms.
 
 You can read more about it here:
 
@@ -16,11 +14,13 @@ You can read more about it here:
 - [Tutorials](/Docs/Tutorials/TOC.md) - the list of all usage guides
 - [Reference](/Docs/Reference/Reference.md) - technical descriptions of Launchbox library functions and other entities
 
+A web demo is also available on itch.io: https://alphish-creature.itch.io/gm-launchbox
+
 ## Installation
 
 The Launchbox package has been developed on **GameMaker 2024.11**. It may not work correctly on the older versions!
 
-1. Download the Local Package YYMPS file: [Launchbox.GMS2.1.0.0.yymps](https://github.com/Alphish/gm-launchbox/releases/download/GMS2.0.9.0/Launchbox.GMS2.0.9.0.yymps)
+1. Download the Local Package YYMPS file: [Launchbox.GMS2.1.0.0.yymps](https://github.com/Alphish/gm-launchbox/releases/download/GMS2.1.0.0/Launchbox.GMS2.1.0.0.yymps)
 2. Follow the [GameMaker manual instructions](https://manual.gamemaker.io/monthly/en/#t=IDE_Tools%2FLocal_Asset_Packages.htm) to import the package; import all the assets.
 3. The Launchbox functionality should be ready to go!
 
